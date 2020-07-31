@@ -4,7 +4,7 @@
       {{ new Date().getFullYear() }} — <v-icon>mdi-home</v-icon>
       <strong>Desenvolvedor: Joel Maykon</strong>
     </v-col>
-    <v-tooltip v-model="show" bottom>
+    <v-tooltip v-model="show" top>
       <template v-slot:activator="{ on, attrs }">
         <v-btn
           v-bind="attrs"
@@ -20,7 +20,9 @@
         >
           <v-icon>mdi-help</v-icon>
         </v-btn>
-      </template></v-tooltip
+      </template>
+      <span>Central de ajuda</span>
+      </v-tooltip
     >
   </v-footer>
 </template>
