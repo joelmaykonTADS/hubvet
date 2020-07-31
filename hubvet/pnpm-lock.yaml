@@ -1,7 +1,10 @@
 dependencies:
+  '@mdi/font': 3.9.97
   core-js: 3.6.5
+  roboto-fontface: 0.10.0
   vue: 2.6.11
   vue-router: 3.3.4
+  vuetify: 2.3.7_vue@2.6.11
   vuex: 3.5.1_vue@2.6.11
 devDependencies:
   '@vue/cli-plugin-babel': 4.4.6_@vue+cli-service@4.4.6
@@ -18,6 +21,7 @@ devDependencies:
   eslint-plugin-prettier: 3.1.4_eslint@6.8.0+prettier@1.19.1
   eslint-plugin-vue: 6.2.2_eslint@6.8.0
   prettier: 1.19.1
+  vue-cli-plugin-vuetify: 2.0.7
   vue-template-compiler: 2.6.11
 lockfileVersion: 5.1
 packages:
@@ -1219,6 +1223,10 @@ packages:
       node: '>= 6'
     resolution:
       integrity: sha512-XKK7ze1apu5JWQ5eZjHITP66AX+QsLlbaJRBGYr8pNzwcAE2JVkwnf0yqjHTsDRcjR0mujy/NmZMXw5kl+kGBw==
+  /@mdi/font/3.9.97:
+    dev: false
+    resolution:
+      integrity: sha512-yADBl2mzqIssrhLaRvJ2gZPyEQK+fN9uYh/1/cwwuq2lKDx+ITWsOrh1vlHMfw1IICMx9cwBjSoiCf3B8Br8nw==
   /@mrmlnc/readdir-enhanced/2.2.1:
     dependencies:
       call-me-maybe: 1.0.1
@@ -5657,6 +5665,12 @@ packages:
       node: '>=6'
     resolution:
       integrity: sha512-S1zBo1D6zcsyuC6PMmY5+55YMILQ9av8lotMx447Bq6SAgo/sDK6y6uUKmuYhW7eacnIhFfsPmCNYdDzsnnDCg==
+  /interpret/1.4.0:
+    dev: true
+    engines:
+      node: '>= 0.10'
+    resolution:
+      integrity: sha512-agE4QfB2Lkp9uICn7BAqoscw4SZP9kTE2hxiFI3jBPmXJfdqiahTbUuKGsMoN2GtqL9AxhYioAcVvgsb1HvRbA==
   /invariant/2.2.4:
     dependencies:
       loose-envify: 1.4.0
@@ -7600,6 +7614,17 @@ packages:
     dev: true
     resolution:
       integrity: sha512-WeBOdju8SnzPN5vTUJYxYUxLeXpCaVP5i5e0LF8fg7WORF2Wd7wFX/pk0tYZk7s8T+J7VLy0Da6J1+wCT0AtHg==
+  /null-loader/3.0.0:
+    dependencies:
+      loader-utils: 1.4.0
+      schema-utils: 1.0.0
+    dev: true
+    engines:
+      node: '>= 8.9.0'
+    peerDependencies:
+      webpack: ^4.3.0
+    resolution:
+      integrity: sha512-hf5sNLl8xdRho4UPBOOeoIwT3WhjYcMUQm0zj44EhD6UscMAz72o2udpoDFBgykucdEDGIcd6SXbc/G6zssbzw==
   /num2fraction/1.2.2:
     dev: true
     resolution:
@@ -8877,6 +8902,14 @@ packages:
       node: '>=4'
     resolution:
       integrity: sha512-wlgPA6cCIIg9gKz0fgAPjnzh4yR/LnXovwuo9hvyGvx3h8nX4+/iLZplfUWasXpqD8BdnGnP5njOFjkUwPzvjA==
+  /rechoir/0.6.2:
+    dependencies:
+      resolve: 1.17.0
+    dev: true
+    engines:
+      node: '>= 0.10'
+    resolution:
+      integrity: sha1-hSBLVNuoLVdC4oyWdW70OvUOM4Q=
   /regenerate-unicode-properties/8.2.0:
     dependencies:
       regenerate: 1.4.1
@@ -9195,6 +9228,10 @@ packages:
     dev: true
     resolution:
       integrity: sha512-ii4iagi25WusVoiC4B4lq7pbXfAp3D9v5CwfkY33vffw2+pkDjY1D8GaN7spsxvCSx8dkPqOZCEZyfxcmJG2IA==
+  /roboto-fontface/0.10.0:
+    dev: false
+    resolution:
+      integrity: sha512-OlwfYEgA2RdboZohpldlvJ1xngOins5d7ejqnIBWr9KaMxsnBqotpptRXTyfNRLnFpqzX6sTDt+X+a+6udnU8g==
   /rsvp/4.8.5:
     dev: true
     engines:
@@ -9321,6 +9358,13 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-+GB6zVA9LWh6zovYQLALHwv5rb2PHGlJi3lfiqIHxR0uuwCgefcOJc59v9fv1w8GbStwxuuqqAjI9NMAOOgq1A==
+  /semver/7.3.2:
+    dev: true
+    engines:
+      node: '>=10'
+    hasBin: true
+    resolution:
+      integrity: sha512-OrOb32TeeambH6UrhtShmF7CRDqhL6/5XpPNp2DuRH6+9QLw/orhp72j87v8Qa1ScDkvrrBNpZcDejAirJmfXQ==
   /send/0.17.1:
     dependencies:
       debug: 2.6.9
@@ -9443,6 +9487,17 @@ packages:
     dev: true
     resolution:
       integrity: sha512-mRz/m/JVscCrkMyPqHc/bczi3OQHkLTqXHEFu0zDhK/qfv3UcOA4SVmRCLmos4bhjr9ekVQubj/R7waKapmiQg==
+  /shelljs/0.8.4:
+    dependencies:
+      glob: 7.1.6
+      interpret: 1.4.0
+      rechoir: 0.6.2
+    dev: true
+    engines:
+      node: '>=4'
+    hasBin: true
+    resolution:
+      integrity: sha512-7gk3UZ9kOfPLIAbslLzyWeGiEqx9e3rxwZM0KE6EL8GlGwjym9Mrlx5/p33bWTu9YG6vcS4MBxYZDHYr5lr8BQ==
   /shellwords/0.1.1:
     dev: true
     resolution:
@@ -10588,6 +10643,22 @@ packages:
     dev: true
     resolution:
       integrity: sha512-2ham8XPWTONajOR0ohOKOHXkm3+gaBmGut3SRuu75xLd/RRaY6vqgh8NBYYk7+RW3u5AtzPQZG8F10LHkl0lAQ==
+  /vue-cli-plugin-vuetify/2.0.7:
+    dependencies:
+      null-loader: 3.0.0
+      semver: 7.3.2
+      shelljs: 0.8.4
+    dev: true
+    peerDependencies:
+      sass-loader: '*'
+      vuetify-loader: '*'
+    peerDependenciesMeta:
+      sass-loader:
+        optional: true
+      vuetify-loader:
+        optional: true
+    resolution:
+      integrity: sha512-4riK5bzyvkZ4CxpQk/Vl6z8n8tmJUhuxh+k8xc/MZRdCt9RxAm3G4SxcEweroqKGXg+CRRfhqysaEQVtd4D40Q==
   /vue-eslint-parser/7.1.0_eslint@6.8.0:
     dependencies:
       debug: 4.1.1
@@ -10680,6 +10751,14 @@ packages:
   /vue/2.6.11:
     resolution:
       integrity: sha512-VfPwgcGABbGAue9+sfrD4PuwFar7gPb1yl1UK1MwXoQPAw0BKSqWfoYCT/ThFrdEVWoI51dBuyCoiNU9bZDZxQ==
+  /vuetify/2.3.7_vue@2.6.11:
+    dependencies:
+      vue: 2.6.11
+    dev: false
+    peerDependencies:
+      vue: ^2.6.4
+    resolution:
+      integrity: sha512-9PNorMNNcn0okT78ZpN86qL5Zx4xu0yzcO2w1IdN3ECdbAP00rHe8CEYCThakwXGUuTZ8Iv7gAMDqH6zfxSMtA==
   /vuex/3.5.1_vue@2.6.11:
     dependencies:
       vue: 2.6.11
@@ -11157,6 +11236,7 @@ packages:
     resolution:
       integrity: sha512-jcKpkthap6x63MB4TxwCyuIGkV0oYP/YRyuQU5UO0Yz/E/ZAu+653/uov+phdmO54n6BcvFRyyt0RRrWdN2mpw==
 specifiers:
+  '@mdi/font': ^3.6.95
   '@vue/cli-plugin-babel': ~4.4.0
   '@vue/cli-plugin-e2e-cypress': ~4.4.0
   '@vue/cli-plugin-eslint': ~4.4.0
@@ -11172,7 +11252,10 @@ specifiers:
   eslint-plugin-prettier: ^3.1.3
   eslint-plugin-vue: ^6.2.2
   prettier: ^1.19.1
+  roboto-fontface: '*'
   vue: ^2.6.11
+  vue-cli-plugin-vuetify: ~2.0.7
   vue-router: ^3.2.0
   vue-template-compiler: ^2.6.11
+  vuetify: ^2.2.11
   vuex: ^3.4.0
