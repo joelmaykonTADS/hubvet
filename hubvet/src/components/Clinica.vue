@@ -27,7 +27,7 @@
           :items="items"
           label="O que você deseja fazer?"
         ></v-select>
-        <v-btn block color="teal" dark>Realizar setup</v-btn>
+        <AlertaSetup :ambiente="'Seja bem vindo ao Ambiente: Clínica'" />
       </v-col>
     </v-row>
     <v-row align="center" justify="center">
@@ -44,11 +44,11 @@
             <v-radio color="teal" :value="3"></v-radio>
             <v-radio color="teal" :value="4" disabled></v-radio>
             <v-radio color="teal" :value="5" disabled></v-radio>
-          </v-radio-group>         
-            <v-btn class="ma-2" disabled text tile large color="grey">
-              Próximo
-              <v-icon right>fa fa-angle-right</v-icon>
-            </v-btn>         
+          </v-radio-group>
+          <v-btn class="ma-2" disabled text tile large color="grey">
+            Próximo
+            <v-icon right>fa fa-angle-right</v-icon>
+          </v-btn>
         </v-row>
       </v-col>
     </v-row>
@@ -56,8 +56,11 @@
 </template>
 
 <script>
+import AlertaSetup from "@/components/AlertaSetup.vue";
+
 export default {
   name: "Usuario",
+  components: { AlertaSetup },
   data: () => ({
     radioGroup: 3,
     item: "Cuidar da minha clínica",
