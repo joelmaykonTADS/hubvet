@@ -11,7 +11,7 @@
           />
           <v-divider />
         </v-flex>
-        <p class="subheading grey--text text--darken-1 font-weight-medium">
+        <p class="subheading grey--text text--darken-1 font-weight-medium pb-6">
           <b class="font-weight-bold">Cuide</b> e
           <b class="font-weight-bold">Aumente</b> a
           <b class="font-weight-bold">receita</b> do seu
