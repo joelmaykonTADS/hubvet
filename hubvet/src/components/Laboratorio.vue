@@ -65,7 +65,7 @@ export default {
   name: "Laboratorio",
   data: () => ({
     radioGroup: 1,
-    item: "'Cuidar do meu Laboratório'",
+    item: "Cuidar do meu Laboratório",
     items: ["Cuidar do meu Laboratório"],
   }),
 };

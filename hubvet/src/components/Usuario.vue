@@ -63,8 +63,8 @@ export default {
   name: "Usuario",
   data: () => ({
     radioGroup: 2,
-    item: "'Cuidar do meu Animal'",
-    items: ["Cuidar do meu Laboratório"],
+    item: "Cuidar do meu Animal",
+    items: ["Cuidar do meu Animal"],
   }),
 };
 </script>
