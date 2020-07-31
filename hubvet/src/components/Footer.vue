@@ -22,7 +22,15 @@
         </v-btn>
       </template>
       <span>Central de ajuda</span>
-      </v-tooltip
-    >
+    </v-tooltip>
   </v-footer>
 </template>
+
+<script>
+export default {
+  name: "BemVindo",
+  data: () => ({
+    show: false
+  })
+};
+</script>
