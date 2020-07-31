@@ -44,13 +44,11 @@
             <v-radio color="teal" :value="3"></v-radio>
             <v-radio color="teal" :value="4" disabled></v-radio>
             <v-radio color="teal" :value="5" disabled></v-radio>
-          </v-radio-group>
-          <router-link to="/setup-clinica">
-            <v-btn class="ma-2" text tile large color="grey">
+          </v-radio-group>         
+            <v-btn class="ma-2" disabled text tile large color="grey">
               Próximo
               <v-icon right>fa fa-angle-right</v-icon>
-            </v-btn>
-          </router-link>
+            </v-btn>         
         </v-row>
       </v-col>
     </v-row>
