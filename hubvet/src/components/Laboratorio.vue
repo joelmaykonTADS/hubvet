@@ -7,7 +7,7 @@
             :src="require('../assets/laboratorio.svg')"
             class="mt-10"
             contain
-            height="250"
+            height="200"
           />
           <v-divider />
         </v-flex>
@@ -20,20 +20,38 @@
           <b class="font-weight-bold">seguro</b> e
           <b class="font-weight-bold">eficaz.</b>
         </p>
-          
       </v-col>
     </v-row>
     <v-row class="text-left" align="center" justify="center">
       <v-col cols="3">
-      <v-select
+        <v-select
           v-model="item"
           color="grey"
           :items="items"
           label="O que você deseja fazer?"
         ></v-select>
-         <v-btn block color="teal" dark>Realizar setup</v-btn>
+        <v-btn block color="teal" dark>Realizar setup</v-btn>
       </v-col>
-    </v-row>   
+    </v-row>
+    <v-row align="center" justify="center">
+      <v-col cols="5">
+        <v-row justify="space-around">
+          <v-btn class="ma-2" text tile large color="grey">
+            <v-icon left>fa fa-angle-left</v-icon>Voltar
+          </v-btn>
+          <v-radio-group v-model="radioGroup" row>
+            <v-radio color="teal" :value="1"></v-radio>
+            <v-radio color="teal" disabled></v-radio>
+            <v-radio color="teal" disabled></v-radio>
+            <v-radio color="teal" disabled></v-radio>
+          </v-radio-group>
+          <v-btn class="ma-2" text tile large color="grey">
+            Próximo
+            <v-icon right>fa fa-angle-right</v-icon>
+          </v-btn>
+        </v-row>
+      </v-col>
+    </v-row>
   </v-container>
 </template>
 
@@ -41,8 +59,9 @@
 export default {
   name: "Laboratorio",
   data: () => ({
-     item:"'Cuidar do meu Laboratório'",
-     items: ['Cuidar do meu Laboratório']
+    radioGroup: 1,
+    item: "'Cuidar do meu Laboratório'",
+    items: ["Cuidar do meu Laboratório"],
   }),
 };
 </script>
