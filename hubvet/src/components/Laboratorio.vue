@@ -43,9 +43,10 @@
           </router-link>
           <v-radio-group v-model="radioGroup" row>
             <v-radio color="teal" :value="1"></v-radio>
-            <v-radio color="teal" disabled></v-radio>
-            <v-radio color="teal" disabled></v-radio>
-            <v-radio color="teal" disabled></v-radio>
+            <v-radio color="teal" :value="2" disabled></v-radio>
+            <v-radio color="teal" :value="3" disabled></v-radio>
+            <v-radio color="teal" :value="4" disabled></v-radio>
+            <v-radio color="teal" :value="5" disabled></v-radio>
           </v-radio-group>
           <router-link to="/setup-usuario">
             <v-btn class="ma-2" text tile large color="grey">
