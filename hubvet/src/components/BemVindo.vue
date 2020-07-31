@@ -40,8 +40,8 @@
           contain
           height="600"
         />
-      </v-col>     
-    </v-row>   
+      </v-col>
+    </v-row>
   </v-container>
 </template>
 
@@ -49,7 +49,7 @@
 export default {
   name: "BemVindo",
   data: () => ({
-    show: false,
-  }),
+    show: false
+  })
 };
 </script>

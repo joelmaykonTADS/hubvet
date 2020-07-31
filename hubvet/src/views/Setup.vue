@@ -1,7 +1,7 @@
 <template>
   <div class="setup">
     <Laboratorio />
-    <Footer/>
+    <Footer />
   </div>
 </template>
 
