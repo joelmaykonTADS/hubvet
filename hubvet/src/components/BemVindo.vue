@@ -15,7 +15,7 @@
           Veterinário</b> ou <b class="font-weight-bold">Clínica Veterinária</b> clicando no botão de <b class="font-weight-bold">setup</b> logo
           abaixo.
         </p>
-        <router-link to="/foo">
+        <router-link to="/setup">
           <v-tooltip v-model="show" bottom>
             <template v-slot:activator="{ on, attrs }">
               <v-img
