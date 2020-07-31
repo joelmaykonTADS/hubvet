@@ -28,7 +28,7 @@
           :items="items"
           label="O que você deseja fazer?"
         ></v-select>
-        <v-btn block color="teal" dark>Realizar setup</v-btn>
+        <AlertaSetup :ambiente="'Seja bem vindo ao Ambiente: Usuário'" />
       </v-col>
     </v-row>
     <v-row align="center" justify="center">
@@ -59,8 +59,11 @@
 </template>
 
 <script>
+import AlertaSetup from "@/components/AlertaSetup.vue";
+
 export default {
   name: "Usuario",
+  components: { AlertaSetup },
   data: () => ({
     radioGroup: 2,
     item: "Cuidar do meu Animal",
