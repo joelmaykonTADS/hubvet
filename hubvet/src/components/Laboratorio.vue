@@ -36,19 +36,23 @@
     <v-row align="center" justify="center">
       <v-col cols="5">
         <v-row justify="space-around">
-          <v-btn class="ma-2" text tile large color="grey">
-            <v-icon left>fa fa-angle-left</v-icon>Voltar
-          </v-btn>
+          <router-link to="/">
+            <v-btn class="ma-2" text tile large color="grey">
+              <v-icon left>fa fa-angle-left</v-icon>Voltar
+            </v-btn>
+          </router-link>
           <v-radio-group v-model="radioGroup" row>
             <v-radio color="teal" :value="1"></v-radio>
             <v-radio color="teal" disabled></v-radio>
             <v-radio color="teal" disabled></v-radio>
             <v-radio color="teal" disabled></v-radio>
           </v-radio-group>
-          <v-btn class="ma-2" text tile large color="grey">
-            Próximo
-            <v-icon right>fa fa-angle-right</v-icon>
-          </v-btn>
+          <router-link to="/setup-usuario">
+            <v-btn class="ma-2" text tile large color="grey">
+              Próximo
+              <v-icon right>fa fa-angle-right</v-icon>
+            </v-btn>
+          </router-link>
         </v-row>
       </v-col>
     </v-row>
