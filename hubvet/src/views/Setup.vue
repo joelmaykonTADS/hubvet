@@ -1,6 +1,6 @@
 <template>
   <div class="setup">
-    <Laboratorio />
+    <Laboratorio v-show="laboratorio" />
     <Footer />
   </div>
 </template>
@@ -12,6 +12,11 @@ import Footer from "@/components/Footer.vue";
 
 export default {
   name: "Setup",
+  props:{
+    laboratorio:Boolean,
+    usuario:Boolean,
+    clinica:Boolean
+  },
   components: {
     Laboratorio,
     Footer
