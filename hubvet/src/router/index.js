@@ -2,6 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import Setup from "../views/Setup.vue";
+import Carrinho from "../views/Carrinho"
 
 Vue.use(VueRouter);
 
@@ -29,12 +30,17 @@ const routes = [
     component: Setup,
     props: { laboratorio: false, usuario: false, clinica: true },
   },
+  {
+    path: "/carrinho",
+    name: "Carrinho",
+    component: Carrinho
+  }
 ];
 
 const router = new VueRouter({
   mode: "history",
   base: process.env.BASE_URL,
-  routes,
+  routes
 });
 
 export default router;
