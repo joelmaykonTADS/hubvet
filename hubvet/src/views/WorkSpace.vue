@@ -37,9 +37,8 @@
             </v-row>
             <TabelaItensGrupos />
           </v-col>
-          <v-col cols="4"
-            ><v-card />
-            <v-row align="center" justify="center">Joel</v-row>
+          <v-col cols="4">
+            <Carrinho />
           </v-col>
         </v-row>
       </v-container>
@@ -53,20 +52,22 @@
 <script>
 import BarraNavegacao from "@/components/BarraNavegacao.vue";
 import TabelaItensGrupos from "@/components/TabelaItensGrupos.vue";
+import Carrinho from "@/components/Carrinho.vue";
 
 export default {
-  name: "Carrinho",
+  name: "WorkSpace",
   components: {
     BarraNavegacao,
-    TabelaItensGrupos
+    TabelaItensGrupos,
+    Carrinho
   },
   props: {
     source: String
   },
   data: () => ({
     drawer: true,
-    filtroItens:true,
-    filtroGrupos:false
+    filtroItens: true,
+    filtroGrupos: false
   })
 };
 </script>
