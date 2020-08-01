@@ -2,7 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import Setup from "../views/Setup.vue";
-import Carrinho from "../views/Carrinho";
+import WorkSpace from "../views/WorkSpace";
 
 Vue.use(VueRouter);
 
@@ -31,9 +31,9 @@ const routes = [
     props: { laboratorio: false, usuario: false, clinica: true }
   },
   {
-    path: "/carrinho",
-    name: "Carrinho",
-    component: Carrinho
+    path: "/meu-workspace",
+    name: "WorkSpace",
+    component: WorkSpace
   }
 ];
 
