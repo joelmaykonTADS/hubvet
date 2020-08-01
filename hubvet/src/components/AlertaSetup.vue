@@ -15,7 +15,7 @@
           <v-btn color="red darken-1" text @click="dialog = false">
             Cancelar
           </v-btn>
-          <router-link to="/carrinho">
+          <router-link to="/meu-workspace">
             <v-btn color="green darken-1" text @click="dialog = false">
               Continuar
             </v-btn>
