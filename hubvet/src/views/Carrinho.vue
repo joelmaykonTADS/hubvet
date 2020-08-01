@@ -9,10 +9,21 @@
       <v-container class="fill-height" fluid>
         <v-row align="center" justify="center">
           <v-col cols="8">
+            <v-row>
+              <v-col cols="12" sm="12" md="8">
+                <v-text-field
+                  prepend-inner-icon="fas fa-search"
+                  placeholder="Pesquisar ..."
+                  color="grey"
+                  outlined
+                ></v-text-field>
+              </v-col>
+            </v-row>
             <TabelaItensGrupos />
           </v-col>
-          <v-col cols="4"><v-card />
-          <v-row align="center" justify="center">Joel</v-row>
+          <v-col cols="4"
+            ><v-card />
+            <v-row align="center" justify="center">Joel</v-row>
           </v-col>
         </v-row>
       </v-container>
@@ -24,9 +35,8 @@
 </template>
 
 <script>
-import BarraNavegacao from "@/components/BarraNavegacao.vue"
-import TabelaItensGrupos from "@/components/TabelaItensGrupos.vue"
-
+import BarraNavegacao from "@/components/BarraNavegacao.vue";
+import TabelaItensGrupos from "@/components/TabelaItensGrupos.vue";
 
 export default {
   name: "Carrinho",
@@ -35,10 +45,10 @@ export default {
     TabelaItensGrupos
   },
   props: {
-    source: String,
+    source: String
   },
   data: () => ({
-    drawer: true,
-  }),
-}
+    drawer: true
+  })
+};
 </script>
