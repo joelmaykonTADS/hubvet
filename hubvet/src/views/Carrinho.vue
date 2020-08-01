@@ -1,32 +1,8 @@
 <template>
   <v-app id="inspire">
-    <v-navigation-drawer
-      v-model="drawer"
-      clipped
-      app
-      color="white"
-    >
-      <v-list dense>
-        <v-list-item link>
-          <v-list-item-action>
-            <v-icon>mdi-home</v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title>Home</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-        <v-list-item link>
-          <v-list-item-action>
-            <v-icon>mdi-email</v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title>Contact</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-      </v-list>
-    </v-navigation-drawer>
+    <BarraNavegacao :drawer="drawer" />
 
-    <v-app-bar app color="white" >
+    <v-app-bar app color="white">
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
       <v-toolbar-title>Application</v-toolbar-title>
     </v-app-bar>
@@ -54,13 +30,18 @@
 </template>
 
 <script>
+import BarraNavegacao from "@/components/BarraNavegacao.vue";
+
 export default {
   name: "Carrinho",
+  components: {
+    BarraNavegacao
+  },
   props: {
-    source: String,
+    source: String
   },
   data: () => ({
-    drawer: null,
-  }),
+    drawer: null
+  })
 };
 </script>
