@@ -1,9 +1,31 @@
 <template>
   <div>
-    <div>
-      readonly
-    </div>
     <v-container fluid>
+      <v-row>
+        <v-col cols="12" sm="12" md="8">
+          <v-text-field
+            elevation="4"
+            solo
+            prepend-inner-icon="fas fa-search"
+            placeholder="Buscar por itens ..."
+            color="grey"
+          ></v-text-field>
+        </v-col>
+        <v-col md="2">
+          <v-checkbox
+            v-model="filtroItens"
+            label="Itens"
+            color="teal"
+          ></v-checkbox>
+        </v-col>
+        <v-col md="2">
+          <v-checkbox
+            v-model="filtroGrupos"
+            label="Grupos"
+            color="teal"
+          ></v-checkbox>
+        </v-col>
+      </v-row>
       <v-row
         class="text-left"
         align="center"
@@ -11,6 +33,33 @@
         :key="item.id"
       >
         <v-col cols="12">
+          <v-row>
+            <v-col cols="1">
+              <span class="caption text--secondary pl-3 font-weight-medium"
+                >Tipo</span
+              >
+            </v-col>
+            <v-col cols="2">
+              <span class="caption text--secondary pl-3 font-weight-medium"
+                >Sigla</span
+              >
+            </v-col>
+            <v-col cols="3">
+              <span class="caption text--secondary pl-3 font-weight-medium"
+                >Nome</span
+              >
+            </v-col>
+            <v-col cols="2">
+              <span class="caption text--secondary pl-3 font-weight-medium"
+                >Prazo</span
+              >
+            </v-col>
+            <v-col cols="3">
+              <span class="caption text--secondary pl-3 font-weight-medium"
+                >Valor</span
+              >
+            </v-col>
+          </v-row>
           <v-card>
             <v-card-title>
               <v-row class="text-left" align="center">
