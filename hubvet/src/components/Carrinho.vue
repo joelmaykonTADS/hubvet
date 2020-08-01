@@ -1,88 +1,96 @@
 <template>
-  <v-container fluid>
-    <v-data-iterator
-      :items="items"
-      :items-per-page.sync="itemsPerPage"
-      hide-default-footer
-    >
-      <template v-slot:header>
-        <v-toolbar class="mb-2" color="indigo darken-5" dark flat>
-          <v-toolbar-title>This is a header</v-toolbar-title>
-        </v-toolbar>
-      </template>
-
-      <template v-slot:default="props">
-        <v-row>
-          <v-col v-for="item in props.items" :key="item.name" cols="12">
-            <v-card>
-              <v-card-title class="subheading font-weight-bold">{{
-                item.name
-              }}</v-card-title>
-
-              <v-divider></v-divider>
-
-              <v-list dense>
-                <v-list-item>
-                  <v-list-item-content>Calories:</v-list-item-content>
-                  <v-list-item-content class="align-end">{{
-                    item.calories
-                  }}</v-list-item-content>
-                </v-list-item>
-
-                <v-list-item>
-                  <v-list-item-content>Fat:</v-list-item-content>
-                  <v-list-item-content class="align-end">{{
-                    item.fat
-                  }}</v-list-item-content>
-                </v-list-item>
-
-                <v-list-item>
-                  <v-list-item-content>Carbs:</v-list-item-content>
-                  <v-list-item-content class="align-end">{{
-                    item.carbs
-                  }}</v-list-item-content>
-                </v-list-item>
-
-                <v-list-item>
-                  <v-list-item-content>Protein:</v-list-item-content>
-                  <v-list-item-content class="align-end">{{
-                    item.protein
-                  }}</v-list-item-content>
-                </v-list-item>
-
-                <v-list-item>
-                  <v-list-item-content>Sodium:</v-list-item-content>
-                  <v-list-item-content class="align-end">{{
-                    item.sodium
-                  }}</v-list-item-content>
-                </v-list-item>
-
-                <v-list-item>
-                  <v-list-item-content>Calcium:</v-list-item-content>
-                  <v-list-item-content class="align-end">{{
-                    item.calcium
-                  }}</v-list-item-content>
-                </v-list-item>
-
-                <v-list-item>
-                  <v-list-item-content>Iron:</v-list-item-content>
-                  <v-list-item-content class="align-end">{{
-                    item.iron
-                  }}</v-list-item-content>
-                </v-list-item>
-              </v-list>
-            </v-card>
-          </v-col>
-        </v-row>
-      </template>
-
-      <template v-slot:footer>
-        <v-toolbar class="mt-2" color="indigo" dark flat>
-          <v-toolbar-title class="subheading">This is a footer</v-toolbar-title>
-        </v-toolbar>
-      </template>
-    </v-data-iterator>
-  </v-container>
+  <div>
+    <v-row>
+      <v-col cols="3">
+        <span class="caption text--secondary pl-3 font-weight-medium"
+          >Sigla</span
+        >
+      </v-col>
+      <v-col cols="6">
+        <span class="caption text--secondary pl-3 font-weight-medium"
+          >Nome</span
+        >
+      </v-col>
+      <v-col cols="3">
+        <span class="caption text--secondary pl-3 font-weight-medium"
+          >Valor</span
+        >
+      </v-col>
+    </v-row>
+    <v-row>
+      <v-col cols="12">
+        <v-card>
+          <v-row v-for="item in items" :key="item.id">
+            <v-col cols="2">
+              <span class="caption text--secondary pl-3 font-weight-regular"
+                ><v-btn small outlined color="grey lighten">{{
+                  item.sigla
+                }}</v-btn></span
+              >
+            </v-col>
+            <v-col cols="5">
+              <span class="caption text--secondary pl-3 font-weight-regular">{{
+                item.nome
+              }}</span>
+            </v-col>
+            <v-col cols="3">
+              <span class="caption text--secondary pl-3 font-weight-regular"
+                >R$ {{ item.valor }}</span
+              >
+            </v-col>
+            <v-col cols="1">
+              <span class="caption text--secondary pl-3 font-weight-regular"
+                >
+                <v-btn icon flat>
+                  <v-icon small color="red lighten-2">fas fa-trash</v-icon>
+                </v-btn>
+                </span
+              >
+            </v-col>
+          </v-row>
+          <v-divider></v-divider>
+          <v-card-action>
+            <v-row>
+              <v-col cols="8"
+                ><span class="caption text--secondary pl-3 font-weight-regular"
+                  >Valor total</span
+                ></v-col
+              >
+              <v-col cols="4"
+                ><span class="caption text--secondary pl-3 font-weight-regular"
+                  >R$ {{ valorTotal }}</span
+                ></v-col
+              >
+            </v-row>
+            <v-row>
+              <v-col cols="8"
+                ><span class="caption text--secondary pl-3 font-weight-regular"
+                  >Valor do desconto</span
+                ></v-col
+              >
+              <v-col cols="4"
+                ><span class="caption text--secondary pl-3 font-weight-regular"
+                  >R$ {{ valorDesconto }}</span
+                ></v-col
+              >
+            </v-row>
+            <v-row>
+              <v-col cols="8"
+                ><span class="caption text--secondary pl-3 font-weight-bold"
+                  >Total com Desconto</span
+                ></v-col
+              >
+              <v-col cols="4"
+                ><span class="caption text--secondary pl-3 font-weight-regular"
+                  >R$ {{ valorTotalComDesconto }}</span
+                ></v-col
+              >
+            </v-row>
+          </v-card-action>
+        </v-card>
+      </v-col>
+    </v-row>
+  </div>
 </template>
 
 <script>
@@ -91,14 +99,22 @@ export default {
     itemsPerPage: 4,
     items: [
       {
-        name: "Frozen Yogurt",
-        calories: 159,
-        fat: 6.0,
-        carbs: 24,
-        protein: 4.0,
-        sodium: 87,
-        calcium: "14%",
-        iron: "1%"
+        id: 1,
+        sigla: "gpt 1",
+        nome: "Grupo 1",
+        valor: 10
+      },
+      {
+        id: 2,
+        sigla: "gpt 1",
+        nome: "Grupo 1",
+        valor: 10
+      },
+      {
+        id: 3,
+        sigla: "gpt 1",
+        nome: "Grupo 1",
+        valor: 10
       }
     ]
   })
