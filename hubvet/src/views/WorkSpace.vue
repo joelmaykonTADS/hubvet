@@ -7,9 +7,9 @@
     </v-app-bar>
     <v-main>
       <v-container class="fill-height grey lighten-3" fluid>
-        <v-row align="center" justify="center">
+        <v-row>
           <v-col cols="8">
-            <v-row align="center" justify="center">
+            <v-row>
               <v-col cols="12" sm="12" md="8">
                 <v-text-field
                   elevation="4"
