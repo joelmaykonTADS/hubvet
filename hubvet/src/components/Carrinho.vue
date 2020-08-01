@@ -39,13 +39,11 @@
               >
             </v-col>
             <v-col cols="1">
-              <span class="caption text--secondary pl-3 font-weight-regular"
-                >
+              <span class="caption text--secondary pl-3 font-weight-regular">
                 <v-btn icon flat>
                   <v-icon small color="red lighten-2">fas fa-trash</v-icon>
                 </v-btn>
-                </span
-              >
+              </span>
             </v-col>
           </v-row>
           <v-divider></v-divider>
@@ -86,6 +84,11 @@
                 ></v-col
               >
             </v-row>
+            <v-row>
+              <v-col cols="12">
+                <AlertaCompra />
+              </v-col>
+            </v-row>
           </v-card-action>
         </v-card>
       </v-col>
@@ -94,7 +97,9 @@
 </template>
 
 <script>
+import AlertaCompra from "@/components/AlertaCompra.vue";
 export default {
+  components: { AlertaCompra },
   data: () => ({
     itemsPerPage: 4,
     items: [
