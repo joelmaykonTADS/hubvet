@@ -6,22 +6,22 @@
       <v-toolbar-title>Application</v-toolbar-title>
     </v-app-bar>
     <v-main>
-      <v-container class="fill-height" fluid>
+      <v-container class="fill-height grey lighten-3" fluid>
         <v-row align="center" justify="center">
           <v-col cols="8">
-            <v-row align="center" justify="space-around">
+            <v-row align="center" justify="center">
               <v-col cols="12" sm="12" md="8">
                 <v-text-field
+                  elevation="4"
+                  solo
                   prepend-inner-icon="fas fa-search"
                   placeholder="Buscar por itens ..."
                   color="grey"
-                  outlined
                 ></v-text-field>
               </v-col>
               <v-col md="2">
                 <v-checkbox
                   v-model="filtroItens"
-                  class="mx-2"
                   label="Itens"
                   color="teal"
                 ></v-checkbox>
@@ -29,7 +29,6 @@
               <v-col md="2">
                 <v-checkbox
                   v-model="filtroGrupos"
-                  class="mx-2"
                   label="Grupos"
                   color="teal"
                 ></v-checkbox>
