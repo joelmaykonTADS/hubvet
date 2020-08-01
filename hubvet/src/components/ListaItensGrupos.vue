@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-container fluid>
+    <v-card style="overflow-y: auto;" height="100vh">
       <v-row>
         <v-col cols="12" sm="12" md="8">
           <v-text-field
@@ -158,7 +158,7 @@
           </v-expand-transition>
         </v-col>
       </v-row>
-    </v-container>
+    </v-card>
   </div>
 </template>
 
