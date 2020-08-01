@@ -34,7 +34,7 @@
                 ></v-checkbox>
               </v-col>
             </v-row>
-            <TabelaItensGrupos />
+            <ListaItensGrupos />
           </v-col>
           <v-col cols="4">
             <Carrinho />
@@ -50,14 +50,14 @@
 
 <script>
 import BarraNavegacao from "@/components/BarraNavegacao.vue";
-import TabelaItensGrupos from "@/components/TabelaItensGrupos.vue";
+import ListaItensGrupos from "@/components/ListaItensGrupos.vue";
 import Carrinho from "@/components/Carrinho.vue";
 
 export default {
   name: "WorkSpace",
   components: {
     BarraNavegacao,
-    TabelaItensGrupos,
+    ListaItensGrupos,
     Carrinho
   },
   props: {
