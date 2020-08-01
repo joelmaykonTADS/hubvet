@@ -27,7 +27,7 @@
         >
       </v-col>
     </v-row>
-    <v-card style="overflow-y: auto;" height="70vh" color="grey lighten-3" elevation="0">
+    <v-card style="overflow-y: auto; overflow-x: hidden;" height="70vh" color="grey lighten-3" elevation="0">
       <v-row
         class="text-left"
         align="center"
