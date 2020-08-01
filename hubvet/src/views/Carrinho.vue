@@ -8,15 +8,11 @@
     <v-main>
       <v-container class="fill-height" fluid>
         <v-row align="center" justify="center">
-          <v-col class="text-center">
-            <v-tooltip left>
-              <template v-slot:activator="{ on }">
-                <v-btn :href="source" icon large target="_blank" v-on="on">
-                  <v-icon large>mdi-code-tags</v-icon>
-                </v-btn>
-              </template>
-              <span>Source</span>
-            </v-tooltip>
+          <v-col cols="8">
+            <TabelaItensGrupos />
+          </v-col>
+          <v-col cols="4"><v-card />
+          <v-row align="center" justify="center">Joel</v-row>
           </v-col>
         </v-row>
       </v-container>
@@ -29,11 +25,14 @@
 
 <script>
 import BarraNavegacao from "@/components/BarraNavegacao.vue"
+import TabelaItensGrupos from "@/components/TabelaItensGrupos.vue"
+
 
 export default {
   name: "Carrinho",
   components: {
     BarraNavegacao,
+    TabelaItensGrupos
   },
   props: {
     source: String,
