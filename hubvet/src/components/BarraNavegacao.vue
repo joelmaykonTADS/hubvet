@@ -1,5 +1,5 @@
 <template>
-  <v-navigation-drawer v-model="drawer" clipped app color="white">
+  <v-navigation-drawer mini-variant v-model="drawer" clipped app color="white">
     <v-list dense>
       <v-list-item link>
         <v-list-item-action>
