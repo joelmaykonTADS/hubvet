@@ -8,7 +8,8 @@
         <v-card-title class="headline">{{ ambiente }}</v-card-title>
 
         <v-card-text>
-          Siga para os próximos passos na nossa plataforma, utilize nosso carrinho de compras e passe a desfrutar dos nossos benefícios.
+          Siga para os próximos passos na nossa plataforma, utilize nosso
+          carrinho de compras e passe a desfrutar dos nossos benefícios.
         </v-card-text>
 
         <v-card-actions>
@@ -17,10 +18,11 @@
           <v-btn color="red darken-1" text @click="dialog = false">
             Cancelar
           </v-btn>
-
-          <v-btn color="green darken-1" text @click="dialog = false">
-            Continuar
-          </v-btn>
+          <router-link to="/carrinho">
+            <v-btn color="green darken-1" text @click="dialog = false">
+              Continuar
+            </v-btn>
+          </router-link>
         </v-card-actions>
       </v-card>
     </v-dialog>
