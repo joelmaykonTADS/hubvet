@@ -9,32 +9,7 @@
       <v-container class="fill-height grey lighten-3" fluid>
         <v-row>
           <v-col cols="8">
-            <v-row>
-              <v-col cols="12" sm="12" md="8">
-                <v-text-field
-                  elevation="4"
-                  solo
-                  prepend-inner-icon="fas fa-search"
-                  placeholder="Buscar por itens ..."
-                  color="grey"
-                ></v-text-field>
-              </v-col>
-              <v-col md="2">
-                <v-checkbox
-                  v-model="filtroItens"
-                  label="Itens"
-                  color="teal"
-                ></v-checkbox>
-              </v-col>
-              <v-col md="2">
-                <v-checkbox
-                  v-model="filtroGrupos"
-                  label="Grupos"
-                  color="teal"
-                ></v-checkbox>
-              </v-col>
-            </v-row>
-            <ListaItensGrupos />
+              <ListaItensGrupos />
           </v-col>
           <v-col cols="4">
             <Carrinho />
