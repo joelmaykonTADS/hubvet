@@ -51,7 +51,7 @@
             </v-col>
             <v-col cols="2">
               <span class="caption text--secondary pl-3 font-weight-medium"
-                >Prazo</span
+                >Prazo (Dias)</span
               >
             </v-col>
             <v-col cols="3">
@@ -68,24 +68,24 @@
                 </v-col>
                 <v-col cols="2">
                   <span
-                    class="caption text--secondary pl-3 font-weight-medium"
+                    class="body-1 text--secondary pl-3 font-weight-medium"
                     >{{ item.sigla }}</span
                   ></v-col
                 >
                 <v-col cols="3">
                   <span
-                    class="caption text--secondary pl-3 font-weight-medium"
+                    class="body-1 text--secondary pl-3 font-weight-medium"
                     >{{ item.nome }}</span
                   ></v-col
                 >
                 <v-col cols="2">
                   <span
-                    class="caption text--secondary pl-3 font-weight-medium"
+                    class="body-1 text--secondary pl-3 font-weight-medium"
                     >{{ item.prazo }}</span
                   ></v-col
                 >
                 <v-col cols="2">
-                  <span class="caption text--secondary pl-3 font-weight-medium"
+                  <span class="body-1 text--secondary pl-3 font-weight-medium"
                     >R$ {{ item.valor }}</span
                   ></v-col
                 >
