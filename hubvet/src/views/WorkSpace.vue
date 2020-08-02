@@ -4,10 +4,10 @@
     <v-app-bar app color="white">
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
       <v-toolbar-title>
-
-          <v-img :src="require('../assets/logo.svg')"
-        />
+        <v-img :src="require('../assets/logo.svg')" />
       </v-toolbar-title>
+      <v-divider class="mx-4" vertical inset />
+      {{ambiente}}
     </v-app-bar>
     <v-main>
       <v-container class="fill-height grey lighten-3" fluid>
@@ -114,7 +114,8 @@ export default {
     }
   },
   props: {
-    source: String
+    source: String,
+    ambiente:String
   },
   data: () => ({
     drawer: true,
