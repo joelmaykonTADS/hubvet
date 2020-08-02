@@ -67,18 +67,32 @@ export default {
     receberItemSelecionado(item) {
       if (item.selecionado) {
         this.itensSelecionados.push(item);
-        if (item.itens) {
-          item.itens.forEach(element => {
-            this.itensSelecionados.push(element);
-          });
-        }
+        this.adicionarSubitens(item);
       } else {
         this.itensSelecionados = this.retirarItem(this.itensSelecionados, item);
+        this.removerSubitens(item);
+      }
+    },
+    adicionarSubitens(item) {
+      if (item.itens) {
+        item.itens.forEach(element => {
+          this.itensSelecionados.push(element);
+        });
+      }
+    },
+    removerSubitens(item) {
+      if (item.itens) {
+        item.itens.forEach(element => {
+          this.itensSelecionados = this.retirarItem(
+            this.itensSelecionados,
+            element
+          );
+        });
       }
     },
     retirarItem(itens, item) {
       const restoItens = itens.filter(function(valor) {
-        return valor.id !== item.id;
+        return valor.nome !== item.nome;
       });
       return restoItens;
     }

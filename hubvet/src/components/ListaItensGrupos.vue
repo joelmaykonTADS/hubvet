@@ -97,7 +97,7 @@
               <div v-for="item in item.itens" :key="item.id">
                 <v-row class="text-left" align="center">
                   <v-col cols="1" class="pl-6">
-                    <v-checkbox color="teal"></v-checkbox>
+                    <v-checkbox v-model="item.selecionado" color="teal"></v-checkbox>
                   </v-col>
                   <v-col cols="2">
                     <span
@@ -150,6 +150,18 @@ export default {
   mounted() {
     this.mostrarSubItens();
   },
+  watch: {
+    itemSelecionado: function(value) {
+      this.itens.forEach(item => {
+        if (value.nome == item.nome) {
+          this.selecionarItem(item);
+          item.itens.forEach(element => {
+            console.log(element)
+          });
+        }
+      });
+    }
+  },
   methods: {
     mostrarSubItens() {
       this.novosItems = this.itens.map(itens => ({
@@ -159,6 +171,7 @@ export default {
     },
     selecionarItem(item) {
       item.selecionado = !item.selecionado;
+      this.itemSelecionado = item.itens;
       this.$emit("itemSelecionado", item);
     }
   },
@@ -166,7 +179,8 @@ export default {
     itens: Array
   },
   data: () => ({
-    novosItems: []
+    novosItems: [],
+    itemSelecionado: ""
   })
 };
 </script>
