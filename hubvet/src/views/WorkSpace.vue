@@ -39,7 +39,6 @@
               @itemSelecionado="receberItemSelecionado"
             />
           </v-col>
-          <v-col cols="4">
             <Carrinho :itens="itensSelecionados" />
           </v-col>
         </v-row>

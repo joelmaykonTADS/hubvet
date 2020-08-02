@@ -21,7 +21,7 @@
           <router-link
             :to="{
               name: 'CompraFinalizada',
-              params: { valorTotal: valorTotal }
+              params: { valorTotal: valorTotal, itens: itens }
             }"
           >
             <v-btn color="green darken-1" text @click="dialog = false">
