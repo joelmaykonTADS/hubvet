@@ -148,10 +148,10 @@
 <script>
 export default {
   mounted() {
-    this.addShow();
+    this.mostrarSubItens();
   },
   methods: {
-    addShow() {
+    mostrarSubItens() {
       this.novosItems = this.itens.map(itens => ({
         ...itens,
         show: false
