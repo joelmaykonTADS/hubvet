@@ -1,12 +1,21 @@
 <template>
   <div>
-    <v-row>
+    <v-row v-if="!carrinho">
+      <v-col cols="1" offset-md="10">
+        <v-col cols="1">
+        <v-btn icon @click="carrinho = !carrinho">
+          <v-icon small>fas fa-angle-left</v-icon>
+        </v-btn>
+      </v-col>
+      </v-col>
+    </v-row>
+    <v-row v-if="carrinho">
       <v-col cols="3">
         <span class="caption text--secondary pl-3 font-weight-medium"
           >Sigla</span
         >
       </v-col>
-      <v-col cols="6">
+      <v-col cols="4">
         <span class="caption text--secondary pl-3 font-weight-medium"
           >Nome</span
         >
@@ -16,19 +25,29 @@
           >Valor</span
         >
       </v-col>
+      <v-col cols="1">
+        <v-btn icon>
+          <v-icon small>fas fa-shopping-cart</v-icon>
+        </v-btn>
+      </v-col>
+       <v-col cols="1">
+        <v-btn icon @click="carrinho = !carrinho">
+          <v-icon small>fas fa-angle-right</v-icon>
+        </v-btn>
+      </v-col>
     </v-row>
-    <v-row>
+    <v-row v-if="carrinho">
       <v-col cols="12">
         <v-card>
           <v-row v-for="item in itens" :key="item.id">
-            <v-col cols="2">
+            <v-col cols="3">
               <span class="caption text--secondary pl-3 font-weight-regular"
                 ><v-btn small outlined color="grey lighten">{{
                   item.sigla
                 }}</v-btn></span
               >
             </v-col>
-            <v-col cols="5">
+            <v-col cols="4">
               <span class="caption text--secondary pl-3 font-weight-regular">{{
                 item.nome
               }}</span>
@@ -49,36 +68,36 @@
           <v-divider></v-divider>
           <v-card-action>
             <v-row>
-              <v-col cols="8"
+              <v-col cols="7"
                 ><span class="caption text--secondary pl-3 font-weight-regular"
                   >Valor total</span
                 ></v-col
               >
-              <v-col cols="4"
+              <v-col cols="5"
                 ><span class="caption text--secondary pl-3 font-weight-regular"
                   >R$ {{ valorTotal }}</span
                 ></v-col
               >
             </v-row>
             <v-row>
-              <v-col cols="8"
+              <v-col cols="7"
                 ><span class="caption text--secondary pl-3 font-weight-regular"
                   >Valor do desconto</span
                 ></v-col
               >
-              <v-col cols="4"
+              <v-col cols="5"
                 ><span class="caption text--secondary pl-3 font-weight-regular"
                   >R$ {{ valorDesconto }}</span
                 ></v-col
               >
             </v-row>
             <v-row>
-              <v-col cols="8"
+              <v-col cols="7"
                 ><span class="caption text--secondary pl-3 font-weight-bold"
                   >Total com Desconto</span
                 ></v-col
               >
-              <v-col cols="4"
+              <v-col cols="5"
                 ><span class="caption text--secondary pl-3 font-weight-regular"
                   >R$ {{ valorTotalComDesconto }}</span
                 ></v-col
@@ -116,7 +135,8 @@ export default {
   data: () => ({
     valorDesconto: 0,
     valorTotal: 0,
-    valorTotalComDesconto: 0
+    valorTotalComDesconto: 0,
+    carrinho:true
   }),
   methods: {
     converterParaReais(resultado) {
