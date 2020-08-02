@@ -34,7 +34,10 @@
         </v-row>
         <v-row>
           <v-col cols="8">
-            <ListaItensGrupos :itens="itens"/>
+            <ListaItensGrupos
+              :itens="itens"
+              @itemSelecionado="receberItemSelecionado"
+            />
           </v-col>
           <v-col cols="4">
             <Carrinho />
@@ -60,6 +63,22 @@ export default {
     ListaItensGrupos,
     Carrinho
   },
+  methods: {
+    receberItemSelecionado(item) {
+      if (item.selecionado) {
+        this.itensSelecionados.push(item);
+      } else {
+        this.itensSelecionados = this.retirarItem(this.itensSelecionados, item);
+      }
+      console.log(this.itensSelecionados);
+    },
+    retirarItem(itens, item) {
+      const restoItens = itens.filter(function(valor) {
+        return valor.id !== item.id;
+      });
+      return restoItens;
+    }
+  },
   props: {
     source: String
   },
@@ -67,6 +86,7 @@ export default {
     drawer: true,
     filtroItens: true,
     filtroGrupos: false,
+    itensSelecionados: [],
     itens: [
       {
         id: 1,
@@ -75,7 +95,8 @@ export default {
         prazo: 0,
         valor: 25.76,
         descricao: "",
-        itens: []
+        itens: [],
+        selecionado: false
       },
       {
         id: 2,
@@ -85,7 +106,8 @@ export default {
         valor: 25.76,
         descricao:
           "Aqui irão conter mais informações sobre o item (Ex: Descrição )",
-        itens: []
+        itens: [],
+        selecionado: false
       },
       {
         id: 3,
@@ -94,7 +116,8 @@ export default {
         prazo: 0,
         valor: 19.68,
         descricao: "",
-        itens: []
+        itens: [],
+        selecionado: false
       },
       {
         id: 4,
@@ -126,7 +149,8 @@ export default {
             prazo: 1,
             valor: 23.89
           }
-        ]
+        ],
+        selecionado: false
       },
       {
         id: 5,
@@ -135,7 +159,8 @@ export default {
         prazo: 0,
         valor: 25.76,
         descricao: "",
-        itens: []
+        itens: [],
+        selecionado: false
       },
       {
         id: 6,
@@ -144,7 +169,8 @@ export default {
         prazo: 0,
         valor: 25.76,
         descricao: "",
-        itens: []
+        itens: [],
+        selecionado: false
       },
       {
         id: 7,
@@ -153,7 +179,8 @@ export default {
         prazo: 0,
         valor: 25.76,
         descricao: "",
-        itens: []
+        itens: [],
+        selecionado: false
       }
     ]
   })

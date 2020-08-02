@@ -27,7 +27,12 @@
         >
       </v-col>
     </v-row>
-    <v-card style="overflow-y: auto; overflow-x: hidden;" height="70vh" color="grey lighten-3" elevation="0">
+    <v-card
+      style="overflow-y: auto; overflow-x: hidden;"
+      height="70vh"
+      color="grey lighten-3"
+      elevation="0"
+    >
       <v-row
         class="text-left"
         align="center"
@@ -39,7 +44,10 @@
             <v-card-title>
               <v-row class="text-left" align="center">
                 <v-col cols="1" class="pl-6">
-                  <v-checkbox color="teal"></v-checkbox>
+                  <v-checkbox
+                    @click="selecionarItem(item)"
+                    color="teal"
+                  ></v-checkbox>
                 </v-col>
                 <v-col cols="2">
                   <span
@@ -148,10 +156,14 @@ export default {
         ...itens,
         show: false
       }));
+    },
+    selecionarItem(item) {
+      item.selecionado = !item.selecionado;
+      this.$emit("itemSelecionado", item);
     }
   },
-  props:{
-    itens:Array
+  props: {
+    itens: Array
   },
   data: () => ({
     novosItems: []
