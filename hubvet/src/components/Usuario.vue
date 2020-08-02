@@ -28,7 +28,7 @@
           :items="items"
           label="O que você deseja fazer?"
         ></v-select>
-        <AlertaSetup :ambiente="'Seja bem vindo ao Ambiente: Usuário'" />
+        <AlertaSetup :ambiente="'Usuário'" />
       </v-col>
     </v-row>
     <v-row align="center" justify="center">

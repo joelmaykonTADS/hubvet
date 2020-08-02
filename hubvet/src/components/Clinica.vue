@@ -27,7 +27,7 @@
           :items="items"
           label="O que você deseja fazer?"
         ></v-select>
-        <AlertaSetup :ambiente="'Seja bem vindo ao Ambiente: Clínica'" />
+        <AlertaSetup :ambiente="'Clínica'" />
       </v-col>
     </v-row>
     <v-row align="center" justify="center">

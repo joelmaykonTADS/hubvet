@@ -30,7 +30,7 @@
           :items="items"
           label="O que você deseja fazer?"
         ></v-select>
-       <AlertaSetup :ambiente="'Seja bem vindo ao Ambiente: Laboratório'"/>
+       <AlertaSetup :ambiente="'Laboratório'"/>
       </v-col>
     </v-row>
     <v-row align="center" justify="center">

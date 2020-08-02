@@ -5,7 +5,7 @@
     >
     <v-dialog v-model="dialog" max-width="490">
       <v-card>
-        <v-card-title class="headline">{{ ambiente }}</v-card-title>
+        <v-card-title class="headline">Seja bem vindo ao Ambiente: {{ ambiente }}</v-card-title>
         <v-card-text>
           Siga para os próximos passos na nossa plataforma, utilize nosso
           carrinho de compras e passe a desfrutar dos nossos benefícios.
