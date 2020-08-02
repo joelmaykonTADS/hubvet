@@ -26,7 +26,7 @@
           >Valor</span
         >
       </v-col>
-       <v-col cols="1">
+      <v-col cols="1">
         <span class="caption text--secondary pl-3 font-weight-medium"
           >Açoes</span
         >
@@ -50,6 +50,7 @@
               <v-row class="text-left" align="center">
                 <v-col cols="1" class="pl-6">
                   <v-checkbox
+                    v-model="item.selecionado"
                     @click="selecionarItem(item)"
                     color="teal"
                   ></v-checkbox>
@@ -104,6 +105,7 @@
                   <v-col cols="1" class="pl-6">
                     <v-checkbox
                       v-model="item.selecionado"
+                      @click="selecionarItem(item)"
                       color="teal"
                     ></v-checkbox>
                   </v-col>
@@ -159,7 +161,7 @@ export default {
     this.mostrarSubItens();
   },
   watch: {
-    itens:function(){
+    itens: function() {
       this.novosItems = this.itens.map(itens => ({
         ...itens,
         show: false
@@ -181,11 +183,32 @@ export default {
       }));
     },
     selecionarItem(item) {
-      item.selecionado = !item.selecionado;
-      item.itens.forEach(element => {
-        element.selecionado = !element.selecionado;
-      });
+      if (item.itens) {
+        item.itens.forEach(element => {
+          element.selecionado = !element.selecionado;
+          this.selecionarItemExterno(element);
+        });
+      }else{
+        this.selecionarItemInterno(item);
+      }
+      
       this.$emit("itemSelecionado", item);
+    },
+
+    selecionarItemInterno(item) {
+      this.novosItems.forEach(novoItem => {
+        if (novoItem.id == item.id) {
+          novoItem.selecionado = !novoItem.selecionado;
+        }
+      });
+    },
+
+    selecionarItemExterno(element) {
+      this.novosItems.forEach(novoItem => {
+        if (novoItem.id == element.id) {
+          novoItem.selecionado = !novoItem.selecionado;
+        }
+      });
     }
   },
   props: {
