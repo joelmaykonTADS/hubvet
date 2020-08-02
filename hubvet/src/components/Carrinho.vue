@@ -86,7 +86,7 @@
             </v-row>
             <v-row>
               <v-col cols="12">
-                <AlertaCompra />
+                <AlertaCompra :valorTotal="valorTotal" />
               </v-col>
             </v-row>
           </v-card-action>

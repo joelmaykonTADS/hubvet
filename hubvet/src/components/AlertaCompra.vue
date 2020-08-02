@@ -18,7 +18,12 @@
           <v-btn color="red darken-1" text @click="dialog = false">
             Cancelar
           </v-btn>
-          <router-link :to="{ name: 'CompraFinalizada', params: { valorTotal: 123 }}">
+          <router-link
+            :to="{
+              name: 'CompraFinalizada',
+              params: { valorTotal: valorTotal }
+            }"
+          >
             <v-btn color="green darken-1" text @click="dialog = false">
               Continuar
             </v-btn>
