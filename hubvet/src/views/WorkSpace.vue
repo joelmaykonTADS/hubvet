@@ -3,7 +3,7 @@
     <BarraNavegacao :drawer="drawer" />
     <v-app-bar app color="white">
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-      <v-toolbar-title>Application</v-toolbar-title>
+      <v-toolbar-title>HubVet</v-toolbar-title>
     </v-app-bar>
     <v-main>
       <v-container class="fill-height grey lighten-3" fluid>
