@@ -46,9 +46,7 @@
         </v-row>
       </v-container>
     </v-main>
-    <v-footer color="indigo" app>
-      <span class="white--text">&copy; {{ new Date().getFullYear() }}</span>
-    </v-footer>
+    <Footer />
   </v-app>
 </template>
 
@@ -56,13 +54,15 @@
 import BarraNavegacao from "@/components/BarraNavegacao.vue";
 import ListaItensGrupos from "@/components/ListaItensGrupos.vue";
 import Carrinho from "@/components/Carrinho.vue";
+import Footer from "@/components/Footer.vue";
 
 export default {
   name: "WorkSpace",
   components: {
     BarraNavegacao,
     ListaItensGrupos,
-    Carrinho
+    Carrinho,
+    Footer
   },
   methods: {
     receberItemSelecionado(item) {
