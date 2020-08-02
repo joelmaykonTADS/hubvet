@@ -105,13 +105,26 @@ export default {
   },
   watch: {
     itens: function(value) {
-      console.log(value);
+      this.valorTotal = 0;
+      for (const i of value) {
+        console.log(this.valorTotal + i.valor);
+        const resultado = parseFloat(this.valorTotal) + parseFloat(i.valor);
+        this.valorTotal = this.converterParaReais(resultado);
+      }
     }
   },
   data: () => ({
-    valorDesconto: 0.0,
-    valorTotal: 0.0,
-    valorTotalComDesconto: 0.0
-  })
+    valorDesconto: 0,
+    valorTotal: 0,
+    valorTotalComDesconto: 0
+  }),
+  methods: {
+    converterParaReais(resultado) {
+      return resultado.toLocaleString(undefined, {
+        maximumFractionDigits: 2,
+        minimumFractionDigits: 2
+      });
+    }
+  }
 };
 </script>
