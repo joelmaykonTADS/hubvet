@@ -7,7 +7,23 @@
         <v-img :src="require('../assets/logo.svg')" />
       </v-toolbar-title>
       <v-divider class="mx-4" vertical inset />
-      {{ambiente}}
+      {{ ambiente }}
+      <v-spacer></v-spacer>
+      <v-icon left>fas fa-search</v-icon>
+      <v-icon left>fas fa-calendar</v-icon>
+      <v-icon left>fas fa-bell</v-icon>
+      <v-avatar>
+      <v-img
+        :src="require('../assets/brazil.png')"
+        height="35"
+        width="10"
+        contain
+      />
+      </v-avatar>
+      <span class="mx-2 caption text--grey">português</span>
+      <v-icon left small>fas fa-caret-down</v-icon>
+      <v-divider class="mx-4" vertical inset />
+      <v-icon left>fas fa-ellipsis-v</v-icon>
     </v-app-bar>
     <v-main>
       <v-container class="fill-height grey lighten-3" fluid>
@@ -115,7 +131,7 @@ export default {
   },
   props: {
     source: String,
-    ambiente:String
+    ambiente: String
   },
   data: () => ({
     drawer: true,
