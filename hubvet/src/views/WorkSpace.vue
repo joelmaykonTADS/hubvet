@@ -40,7 +40,7 @@
             />
           </v-col>
           <v-col cols="4">
-            <Carrinho />
+            <Carrinho :itens="itensSelecionados" />
           </v-col>
         </v-row>
       </v-container>
@@ -70,7 +70,6 @@ export default {
       } else {
         this.itensSelecionados = this.retirarItem(this.itensSelecionados, item);
       }
-      console.log(this.itensSelecionados);
     },
     retirarItem(itens, item) {
       const restoItens = itens.filter(function(valor) {

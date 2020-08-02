@@ -20,7 +20,7 @@
     <v-row>
       <v-col cols="12">
         <v-card>
-          <v-row v-for="item in items" :key="item.id">
+          <v-row v-for="item in itens" :key="item.id">
             <v-col cols="2">
               <span class="caption text--secondary pl-3 font-weight-regular"
                 ><v-btn small outlined color="grey lighten">{{
@@ -100,28 +100,18 @@
 import AlertaCompra from "@/components/AlertaCompra.vue";
 export default {
   components: { AlertaCompra },
+  props: {
+    itens: Array
+  },
+  watch: {
+    itens: function(value) {
+      console.log(value);
+    }
+  },
   data: () => ({
-    itemsPerPage: 4,
-    items: [
-      {
-        id: 1,
-        sigla: "gpt 1",
-        nome: "Grupo 1",
-        valor: 10
-      },
-      {
-        id: 2,
-        sigla: "gpt 1",
-        nome: "Grupo 1",
-        valor: 10
-      },
-      {
-        id: 3,
-        sigla: "gpt 1",
-        nome: "Grupo 1",
-        valor: 10
-      }
-    ]
+    valorDesconto: 0.0,
+    valorTotal: 0.0,
+    valorTotalComDesconto: 0.0
   })
 };
 </script>
