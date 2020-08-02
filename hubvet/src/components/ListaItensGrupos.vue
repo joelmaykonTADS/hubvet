@@ -97,7 +97,10 @@
               <div v-for="item in item.itens" :key="item.id">
                 <v-row class="text-left" align="center">
                   <v-col cols="1" class="pl-6">
-                    <v-checkbox v-model="item.selecionado" color="teal"></v-checkbox>
+                    <v-checkbox
+                      v-model="item.selecionado"
+                      color="teal"
+                    ></v-checkbox>
                   </v-col>
                   <v-col cols="2">
                     <span
@@ -153,11 +156,8 @@ export default {
   watch: {
     itemSelecionado: function(value) {
       this.itens.forEach(item => {
-        if (value.nome == item.nome) {
+        if (value.id == item.id) {
           this.selecionarItem(item);
-          item.itens.forEach(element => {
-            console.log(element)
-          });
         }
       });
     }
@@ -168,10 +168,13 @@ export default {
         ...itens,
         show: false
       }));
+      console.log(this.novosItems);
     },
     selecionarItem(item) {
       item.selecionado = !item.selecionado;
-      this.itemSelecionado = item.itens;
+      item.itens.forEach(element => {
+        element.selecionado = !element.selecionado;
+      });
       this.$emit("itemSelecionado", item);
     }
   },

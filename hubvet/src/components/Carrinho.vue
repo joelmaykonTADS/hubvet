@@ -124,9 +124,8 @@ export default {
     itens: function(value) {
       this.valorTotal = 0;
       for (const i of value) {
-        console.log(this.valorTotal + i.valor);
         const resultado = parseFloat(this.valorTotal) + parseFloat(i.valor);
-        this.valorTotal = this.converterParaReais(resultado);
+        this.valorTotal = resultado
       }
     }
   },
@@ -134,7 +133,7 @@ export default {
     valorDesconto: 0,
     valorTotal: 0,
     valorTotalComDesconto: 0,
-    carrinho: true
+    carrinho: true,
   }),
   methods: {
     converterParaReais(resultado) {

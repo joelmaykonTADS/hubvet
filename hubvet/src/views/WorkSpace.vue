@@ -146,7 +146,7 @@ export default {
         descricao: "",
         itens: [
           {
-            id: 1,
+            id: 5,
             sigla: "IT7",
             nome: "Item 7",
             prazo: 2,
@@ -154,7 +154,7 @@ export default {
             selecionado: false
           },
           {
-            id: 2,
+            id: 6,
             sigla: "IT3",
             nome: "Item 3",
             prazo: 1,
@@ -163,7 +163,7 @@ export default {
           },
 
           {
-            id: 3,
+            id: 7,
             sigla: "IT6",
             nome: "Item 6",
             prazo: 1,
@@ -174,7 +174,7 @@ export default {
         selecionado: false
       },
       {
-        id: 5,
+        id: 8,
         sigla: "GP 3",
         nome: "Grupo 3",
         prazo: 0,
@@ -184,7 +184,7 @@ export default {
         selecionado: false
       },
       {
-        id: 6,
+        id: 9,
         sigla: "IT 7",
         nome: "Item 7",
         prazo: 0,
@@ -194,7 +194,7 @@ export default {
         selecionado: false
       },
       {
-        id: 7,
+        id: 10,
         sigla: "IT20",
         nome: "Item 20",
         prazo: 0,
