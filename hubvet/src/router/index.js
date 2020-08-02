@@ -34,7 +34,8 @@ const routes = [
   {
     path: "/meu-workspace",
     name: "WorkSpace",
-    component: WorkSpace
+    component: WorkSpace,
+    props:true
   },
   {
     path: "/compra-finalizada",

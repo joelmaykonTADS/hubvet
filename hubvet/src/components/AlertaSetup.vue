@@ -15,7 +15,12 @@
           <v-btn color="red darken-1" text @click="dialog = false">
             Cancelar
           </v-btn>
-          <router-link to="/meu-workspace">
+          <router-link
+            :to="{
+              name: 'WorkSpace',
+              params: { ambiente: ambiente }
+            }"
+          >
             <v-btn color="green darken-1" text @click="dialog = false">
               Continuar
             </v-btn>
