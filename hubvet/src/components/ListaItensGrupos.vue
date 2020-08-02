@@ -21,9 +21,14 @@
           >Prazo (Dias)</span
         >
       </v-col>
-      <v-col cols="3">
+      <v-col cols="2">
         <span class="caption text--secondary pl-3 font-weight-medium"
           >Valor</span
+        >
+      </v-col>
+       <v-col cols="1">
+        <span class="caption text--secondary pl-3 font-weight-medium"
+          >Açoes</span
         >
       </v-col>
     </v-row>
