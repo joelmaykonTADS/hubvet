@@ -36,7 +36,7 @@
 
 <script>
 export default {
-  props: { ambiente: String, itens: Array, valorTotal: String },
+  props: { ambiente: String, itens: Array, valorTotal: Number },
   data() {
     return {
       dialog: false
