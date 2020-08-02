@@ -166,6 +166,7 @@ export default {
             id: 9,
             sigla: "IT7",
             nome: "Item 7",
+            tipo: "item",
             prazo: 2,
             valor: 18.07,
             selecionado: false
@@ -173,15 +174,16 @@ export default {
           {
             id: 6,
             sigla: "IT3",
+            tipo: "item",
             nome: "Item 3",
             prazo: 1,
             valor: 18.07,
             selecionado: false
           },
-
           {
             id: 7,
             sigla: "IT6",
+            tipo: "item",
             nome: "Item 6",
             prazo: 1,
             valor: 23.89,

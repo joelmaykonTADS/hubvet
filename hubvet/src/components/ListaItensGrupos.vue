@@ -182,19 +182,33 @@ export default {
         show: false
       }));
     },
+
     selecionarItem(item) {
       if (item.itens) {
         item.itens.forEach(element => {
           element.selecionado = !element.selecionado;
           this.selecionarItemExterno(element);
         });
-      }else{
+      } else {
         this.selecionarItemInterno(item);
       }
-      
-      this.$emit("itemSelecionado", item);
+      this.escolherPorTipo(item);
     },
 
+    escolherPorTipo(item) {
+      if (item.tipo == "item") {
+        this.$emit("itemSelecionado", item);
+      } else {
+        item.itens.forEach(element => {
+          this.selecionarVariositens(element);
+        });
+      }
+    },
+
+    selecionarVariositens(item) {
+      this.$emit("itemSelecionado", item);
+    },
+    
     selecionarItemInterno(item) {
       this.novosItems.forEach(novoItem => {
         if (novoItem.id == item.id) {
