@@ -3,6 +3,7 @@ import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import Setup from "../views/Setup.vue";
 import WorkSpace from "../views/WorkSpace";
+import CompraFinalizada from "../views/CompraFinalizada";
 
 Vue.use(VueRouter);
 
@@ -34,6 +35,12 @@ const routes = [
     path: "/meu-workspace",
     name: "WorkSpace",
     component: WorkSpace
+  },
+  {
+    path: "/compra-finalizada",
+    name: "CompraFinalizada",
+    component: CompraFinalizada,
+    props: true
   }
 ];
 

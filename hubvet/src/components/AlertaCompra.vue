@@ -10,15 +10,15 @@
       <v-card>
         <v-card-title class="headline">{{ ambiente }}</v-card-title>
         <v-card-text>
-          Siga para os próximos passos na nossa plataforma, utilize nosso
-          carrinho de compras e passe a desfrutar dos nossos benefícios.
+          Compra realizada com sucesso agora você já pode desfrutar dos nossos
+          benefícios.
         </v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
           <v-btn color="red darken-1" text @click="dialog = false">
             Cancelar
           </v-btn>
-          <router-link to="/meu-workspace">
+          <router-link :to="{ name: 'CompraFinalizada', params: { valorTotal: 123 }}">
             <v-btn color="green darken-1" text @click="dialog = false">
               Continuar
             </v-btn>
@@ -31,7 +31,7 @@
 
 <script>
 export default {
-  props: { ambiente: String },
+  props: { ambiente: String, itens: Array, valorTotal: String },
   data() {
     return {
       dialog: false
