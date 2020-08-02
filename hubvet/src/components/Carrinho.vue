@@ -59,7 +59,7 @@
             </v-col>
             <v-col cols="1">
               <span class="caption text--secondary pl-3 font-weight-regular">
-                <v-btn icon flat>
+                <v-btn icon text>
                   <v-icon small color="red lighten-2">fas fa-trash</v-icon>
                 </v-btn>
               </span>
