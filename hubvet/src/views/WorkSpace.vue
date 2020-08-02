@@ -67,6 +67,11 @@ export default {
     receberItemSelecionado(item) {
       if (item.selecionado) {
         this.itensSelecionados.push(item);
+        if (item.itens) {
+          item.itens.forEach(element => {
+            this.itensSelecionados.push(element);
+          });
+        }
       } else {
         this.itensSelecionados = this.retirarItem(this.itensSelecionados, item);
       }
