@@ -15,6 +15,7 @@
               prepend-inner-icon="fas fa-search"
               placeholder="Buscar por itens ..."
               color="grey"
+              v-model="busca"
             ></v-text-field>
           </v-col>
           <v-col md="2">
@@ -35,7 +36,7 @@
         <v-row>
           <v-col cols="8">
             <ListaItensGrupos
-              :itens="itens"
+              :itens="itensFiltrados"
               @itemSelecionado="receberItemSelecionado"
             />
           </v-col>
@@ -97,17 +98,30 @@ export default {
       return restoItens;
     }
   },
+  computed: {
+    itensFiltrados() {
+      if (this.busca) {
+        return this.itens.filter(item => {
+          return item.nome.match(this.busca);
+        });
+      } else {
+        return this.itens;
+      }
+    }
+  },
   props: {
     source: String
   },
   data: () => ({
     drawer: true,
+    busca: "",
     filtroItens: true,
     filtroGrupos: false,
     itensSelecionados: [],
     itens: [
       {
         id: 1,
+        tipo: "item",
         sigla: "GLIC",
         nome: "Item 1",
         prazo: 0,
@@ -119,6 +133,7 @@ export default {
       {
         id: 2,
         sigla: "GLIC 2",
+        tipo: "item",
         nome: "Item 2",
         prazo: 0,
         valor: 25.76,
@@ -130,6 +145,7 @@ export default {
       {
         id: 3,
         sigla: "GP 1",
+        tipo: "grupo",
         nome: "Grupo 1",
         prazo: 0,
         valor: 19.68,
@@ -140,6 +156,7 @@ export default {
       {
         id: 4,
         sigla: "GP 2",
+        tipo: "grupo",
         nome: "Grupo 2",
         prazo: 2,
         valor: 60.03,
@@ -176,6 +193,7 @@ export default {
       {
         id: 8,
         sigla: "GP 3",
+        tipo: "grupo",
         nome: "Grupo 3",
         prazo: 0,
         valor: 25.76,
@@ -186,6 +204,7 @@ export default {
       {
         id: 9,
         sigla: "IT 7",
+        tipo: "item",
         nome: "Item 7",
         prazo: 0,
         valor: 25.76,
@@ -196,6 +215,7 @@ export default {
       {
         id: 10,
         sigla: "IT20",
+        tipo: "item",
         nome: "Item 20",
         prazo: 0,
         valor: 25.76,

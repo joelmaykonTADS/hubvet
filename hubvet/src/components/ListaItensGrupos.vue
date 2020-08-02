@@ -159,6 +159,12 @@ export default {
     this.mostrarSubItens();
   },
   watch: {
+    itens:function(){
+      this.novosItems = this.itens.map(itens => ({
+        ...itens,
+        show: false
+      }));
+    },
     itemSelecionado: function(value) {
       this.itens.forEach(item => {
         if (value.id == item.id) {
@@ -173,7 +179,6 @@ export default {
         ...itens,
         show: false
       }));
-      console.log(this.novosItems);
     },
     selecionarItem(item) {
       item.selecionado = !item.selecionado;
